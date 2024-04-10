@@ -1,4 +1,4 @@
-package com.aiglepub.composecomponents.layouts
+package com.aiglepub.composecomponents.examples.layouts
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

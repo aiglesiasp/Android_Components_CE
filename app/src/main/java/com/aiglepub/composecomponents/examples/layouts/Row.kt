@@ -1,10 +1,10 @@
-package com.aiglepub.composecomponents.layouts
+package com.aiglepub.composecomponents.examples.layouts
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -19,16 +19,16 @@ import com.aiglepub.composecomponents.Greeting
  * Por Default se ajusta al tamaño de sus hijos asi que hay que
  * darle un modificador para que se ajuste a la pantalla
  *
- * Con verticalArrangement podemos ordenar los elementos de forma vertical
- * Con horizontalAlignment podemos ordenar los elementos de forma horizontal
+ * Con horizontalArrangement podemos ordenar los elementos de forma vertical
+ * Con verticalAlignment podemos ordenar los elementos de forma horizontal
  */
 
 @Composable
-fun MyCustomColumn() {
-    Column(
+fun MyCustomRow() {
+    Row(
         modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.SpaceEvenly,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalArrangement = Arrangement.SpaceEvenly,
+        verticalAlignment = Alignment.CenterVertically
     ) {
         Greeting(
             name = "Aitor",
@@ -53,6 +53,6 @@ fun MyCustomColumn() {
     heightDp = 200
 )
 @Composable
-private fun MyCustomColumn_Preview() {
-    MyCustomColumn()
+private fun MyCustomRow_Preview() {
+    MyCustomRow()
 }
