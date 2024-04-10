@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.aiglepub.composecomponents.examples.estados.MyStateSample
+import com.aiglepub.composecomponents.examples.estados.MyStateSampleFather
 import com.aiglepub.composecomponents.ui.medialist.MediaList
 import com.aiglepub.composecomponents.ui.theme.ComposeComponentsTheme
 
@@ -23,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MyStateSample()
+                    MyStateSampleFather()
                 }
             }
         }
