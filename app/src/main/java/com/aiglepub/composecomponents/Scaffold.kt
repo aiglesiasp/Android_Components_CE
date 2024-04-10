@@ -1,4 +1,4 @@
-package com.aiglepub.composecomponents.layouts
+package com.aiglepub.composecomponents
 
 import androidx.compose.runtime.Composable
 
