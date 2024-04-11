@@ -1,4 +1,4 @@
-package com.aiglepub.composecomponents.ui.medialist
+package com.aiglepub.composecomponents.ui.screens.main
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -19,10 +19,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.aiglepub.composecomponents.ui.medialist.model.MediaItem
+import com.aiglepub.composecomponents.R
+import com.aiglepub.composecomponents.model.MediaItem
 
 
 @Composable
@@ -32,7 +34,7 @@ fun MediaListItem(item: MediaItem, modifier: Modifier = Modifier) {
     ) {
         Box(
             modifier = Modifier
-                .height(200.dp)
+                .height(dimensionResource(id = R.dimen.cell_thumb_height))
                 .fillMaxWidth()
                 .background(Color.Cyan)
         ) {
@@ -43,7 +45,7 @@ fun MediaListItem(item: MediaItem, modifier: Modifier = Modifier) {
             modifier = Modifier
                 .fillMaxWidth()
                 .background(MaterialTheme.colorScheme.secondary)
-                .padding(16.dp)
+                .padding(dimensionResource(id = R.dimen.padding_medium))
         ) {
             Text(
                 text = item.title,
@@ -58,7 +60,7 @@ fun MediaListItem(item: MediaItem, modifier: Modifier = Modifier) {
 fun MediaListItemImage(item: MediaItem) {
     Box(
         modifier = Modifier
-            .height(200.dp)
+            .height(dimensionResource(id = R.dimen.cell_thumb_height))
             .fillMaxWidth(),
         contentAlignment = Alignment.Center
     ) {
@@ -86,6 +88,6 @@ fun MediaListItemIcon() {
         contentDescription = "Icon",
         tint = Color.White,
         modifier = Modifier
-            .size(92.dp)
+            .size(dimensionResource(id = R.dimen.padding_hight))
     )
 }
