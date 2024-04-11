@@ -9,8 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.aiglepub.composecomponents.ui.medialist.MediaListItem
-import com.aiglepub.composecomponents.ui.medialist.model.MediaItem
+import com.aiglepub.composecomponents.ui.screens.main.MediaListItem
+import com.aiglepub.composecomponents.model.MediaItem
 
 /**
  * Equivalente a RecyclerView
