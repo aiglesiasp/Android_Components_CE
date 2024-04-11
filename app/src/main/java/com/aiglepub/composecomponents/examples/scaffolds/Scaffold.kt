@@ -27,6 +27,6 @@ fun MyCustomScaffold() {
         snackbarHost = { }, // snackbars --> mensajes parecidos al Toast
         floatingActionButton = { }, // botones de accion que se colocan a la derecha abajo
     ) {paddingValues ->
-        MediaList(modifier = Modifier.padding(paddingValues))
+        MediaList(modifier = Modifier.padding(paddingValues), onMediaClick = { })
     }
 }

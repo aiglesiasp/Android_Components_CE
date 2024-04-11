@@ -1,6 +1,7 @@
 package com.aiglepub.composecomponents.ui.screens.main
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,31 +29,29 @@ import com.aiglepub.composecomponents.model.MediaItem
 
 
 @Composable
-fun MediaListItem(item: MediaItem, modifier: Modifier = Modifier) {
+fun MediaListItem(item: MediaItem, onClick: () -> Unit ,modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
+            .clickable { onClick() }
     ) {
-        Box(
-            modifier = Modifier
-                .height(dimensionResource(id = R.dimen.cell_thumb_height))
-                .fillMaxWidth()
-                .background(Color.Cyan)
-        ) {
-            MediaListItemImage(item)
-        }
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(MaterialTheme.colorScheme.secondary)
-                .padding(dimensionResource(id = R.dimen.padding_medium))
-        ) {
-            Text(
-                text = item.title,
-                style = MaterialTheme.typography.titleLarge
-            )
-        }
+        MediaListItemImage(item)
+        MediaListTitle(item)
+    }
+}
 
+@Composable
+fun MediaListTitle(item: MediaItem) {
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colorScheme.secondary)
+            .padding(dimensionResource(id = R.dimen.padding_medium))
+    ) {
+        Text(
+            text = item.title,
+            style = MaterialTheme.typography.titleLarge
+        )
     }
 }
 
@@ -61,7 +60,8 @@ fun MediaListItemImage(item: MediaItem) {
     Box(
         modifier = Modifier
             .height(dimensionResource(id = R.dimen.cell_thumb_height))
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .background(Color.Cyan),
         contentAlignment = Alignment.Center
     ) {
         AsyncImage(

@@ -10,18 +10,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.unit.dp
 import com.aiglepub.composecomponents.R
+import com.aiglepub.composecomponents.model.MediaItem
 import com.aiglepub.composecomponents.model.generateListOfMediaItem
 
 
 @Composable
-fun MediaList(modifier: Modifier = Modifier) {
+fun MediaList(onMediaClick: (MediaItem) -> Unit,modifier: Modifier = Modifier) {
         LazyVerticalGrid(
             contentPadding = PaddingValues(dimensionResource(id = R.dimen.padding_xsmall)),
             columns = GridCells.Adaptive(dimensionResource(id = R.dimen.cell_min_width)),
             modifier = modifier
         ) {
             items(generateListOfMediaItem()) { mediaItem ->
-                MediaListItem(item = mediaItem, modifier.padding(dimensionResource(id = R.dimen.padding_xsmall)))
+                MediaListItem(
+                    item = mediaItem,
+                    onClick = { onMediaClick(mediaItem) },
+                    modifier = modifier.padding(dimensionResource(id = R.dimen.padding_xsmall)))
             }
         }
 }

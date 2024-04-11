@@ -28,7 +28,8 @@ fun MyCustomLazyGrid() {
         items(100) {
             MediaListItem(
                 item = MediaItem(1,"","", MediaItem.Type.VIDEO),
-                modifier = Modifier.padding(2.dp)
+                modifier = Modifier.padding(2.dp),
+                onClick = { }
             )
         }
     }
