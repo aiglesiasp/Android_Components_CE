@@ -1,4 +1,4 @@
-package com.aiglepub.composecomponents.ui.medialist.model
+package com.aiglepub.composecomponents.model
 
 data class MediaItem(
     val id: Int,
