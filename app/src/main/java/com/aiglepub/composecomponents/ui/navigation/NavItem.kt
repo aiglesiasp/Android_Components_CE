@@ -9,7 +9,7 @@ sealed class NavItem (
 ) {
     val route = run {
         // baseroute/{arg1}/{arg2}/...
-        val argKeys = navArgs.map { "${it.key}" } //mapeamos en argKeys las claves añadiendo las llaves
+        val argKeys = navArgs.map { "{${it.key}}" } //mapeamos en argKeys las claves añadiendo las llaves
         listOf(baseRoute)
             .plus(argKeys)
             .joinToString("/") //Creamos una lista con la baseRouter mas todos los argumentos y lo pasamos a String con el separador /

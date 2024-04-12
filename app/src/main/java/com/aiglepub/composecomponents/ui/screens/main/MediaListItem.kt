@@ -32,7 +32,7 @@ import com.aiglepub.composecomponents.model.MediaItem
 fun MediaListItem(item: MediaItem, onClick: () -> Unit ,modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
-            .clickable { onClick() }
+            .clickable(onClick = onClick)
     ) {
         MediaListItemImage(item)
         MediaListTitle(item)

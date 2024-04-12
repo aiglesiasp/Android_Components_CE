@@ -17,7 +17,7 @@ fun MainScreen(onMediaClick: (MediaItem) -> Unit) {
         floatingActionButton = { }, // botones de accion que se colocan a la derecha abajo
     ) { paddingValues ->
         MediaList(
-            onMediaClick =  onMediaClick ,
+            onMediaClick =  {onMediaClick(it)} ,
             modifier = Modifier.padding(paddingValues)
         )
     }
